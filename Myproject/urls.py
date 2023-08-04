@@ -17,6 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.shortcuts import HttpResponse, render
+
+def index(request):
+    return render(request, 'Myproject/templates/index.html')
+
+def contact_us(request):
+    return HttpResponse('<h1>Contact Us page</h1><a href="/">Back</a>')
+
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", index, name='index'),
+    path("contact_us", contact_us, name='contactus'),
 ]
