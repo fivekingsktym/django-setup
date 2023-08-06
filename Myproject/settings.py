@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'myapp',
 ]
 
 MIDDLEWARE = [
@@ -54,8 +55,8 @@ ROOT_URLCONF = "Myproject.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
-        "APP_DIRS": True,
+        "DIRS": [], # If you leave it empty, Django will only look for templates within the app directories, like: "app_name/templates/..."
+        "APP_DIRS": True, # The django only takes templates from apps, when the APP_DIRS set to "True"
         "OPTIONS": {
             "context_processors": [
                 "django.template.context_processors.debug",
